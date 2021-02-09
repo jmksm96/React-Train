@@ -1,7 +1,15 @@
 import React from "react";
 
-const Rating = (props: any) => {
-if (props.value ===1) {
+type RatingPropsType = {
+    value: number
+}
+
+type StarPropsType = {
+    selected: boolean
+}
+
+const Rating = (props: RatingPropsType) => {
+if (props.value === 1) {
     return (
         <div className='mainDiv'>
             <Star selected={true}/>
@@ -67,7 +75,7 @@ if (props.value ===5) {
         </div>
     )
 }
-const Star = (props: any) => {
+const Star = (props: StarPropsType) => {
 
     if (props.selected === true) {
         return <span> <b>star </b></span>
